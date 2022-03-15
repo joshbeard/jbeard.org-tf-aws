@@ -7,12 +7,13 @@ module "jbeard_org_aws" {
     log_bucket_name = "jbeard-logs"
     log_prefix      = "jbeard/"
     iam_name        = "s3-deployer-jbeard-org"
+    tags            = { "git_repo": "https://github.com/joshbeard/jbeard.org-tf-aws" }
 }
 
 module "jbeard_org_migadu" {
     source = "github.com/joshbeard/tf-migadu-route53.git"
 
     domain        = "jbeard.org"
-    zone_id       = module.jbeard_org_aws.zone_id
+    zone_id       = module.jbeard_org_aws.route53_zone_id
     migadu_verify = "mvqyprbr"
 }
