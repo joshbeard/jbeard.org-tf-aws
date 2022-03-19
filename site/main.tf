@@ -16,4 +16,7 @@ module "jbeard_org_migadu" {
   domain        = "jbeard.org"
   zone_id       = module.jbeard_org_aws.route53_zone_id
   migadu_verify = "mvqyprbr"
+  txt_records = [
+    "keybase-site-verification=yViITyWeEmSMQSV5tkNq3HC2jreuJk_ytg7sHbIShHM"
+  ]
 }
